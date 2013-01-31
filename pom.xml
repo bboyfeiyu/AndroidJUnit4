@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.uphyca</groupId>
 	<artifactId>android-junit4-parent</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Android JUnit4(Parent)</name>
 
@@ -12,6 +13,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.6</java.version>
+		<android.version>4.1.1.4</android.version>
+		<android.platform>14</android.platform>
+		<android-support.version>r7</android-support.version>
+		<android-maven.version>3.5.0</android-maven.version>
+		<junit.version>4.11</junit.version>
 	</properties>
 
 	<scm>
@@ -45,20 +53,34 @@
 	</parent>
 
 	<modules>
-		<module>android-junit4</module>
-		<module>android-junit4-robolectric</module>
-		<module>android-junit3-extension</module>
-		<module>android-junit3-extension-support-v4</module>
-		<module>android-junit3-dbunit</module>
-		<module>android-junit4-extension</module>
-		<module>android-junit4-extension-support-v4</module>
-
-		<module>android-junit4-test</module>
-		<module>android-junit4-robolectric-test</module>
-		<module>android-junit3-extension-support-v4-test</module>
-		<module>android-junit4-test-mockito</module>
-		<module>android-junit3-dbunit-test</module>
+		<module>library</module>
+		<module>tests</module>
 	</modules>
-	
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>android</artifactId>
+				<version>${android.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>android-test</artifactId>
+				<version>${android.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.android</groupId>
+				<artifactId>support-v4</artifactId>
+				<version>${android-support.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit-dep</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
 

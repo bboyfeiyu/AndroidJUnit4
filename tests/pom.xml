@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.uphyca</groupId>
+	<artifactId>android-junit4-parent-tests</artifactId>
+	<packaging>pom</packaging>
+	<name>Android JUnit4 Tests(Parent)</name>
+
+	<parent>
+		<groupId>com.uphyca</groupId>
+		<artifactId>android-junit4-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modules>
+		<module>android-junit4-tests-parent</module>
+<!--
+		<module>android-junit4-robolectric-test</module>
+		<module>android-junit3-extension-support-v4-test</module>
+		<module>android-junit4-test-mockito</module>
+		<module>android-junit3-dbunit-test</module>
+-->
+	</modules>
+</project>
+
