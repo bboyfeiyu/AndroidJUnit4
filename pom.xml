@@ -19,7 +19,7 @@
 		<android.platform>14</android.platform>
 		<android-support.version>r7</android-support.version>
 		<android-maven.version>3.5.0</android-maven.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.10</junit.version>
 	</properties>
 
 	<scm>
@@ -41,6 +41,19 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<developers>
+		<developer>
+			<name>Sosuke Masui</name>
+			<email>esmasui@gmail.com</email>
+			<id>esmasui</id>
+			<timezone>+9</timezone>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+
 	<organization>
 		<name>uPhyca Inc.</name>
 		<url>http://www.uphyca.com/</url>
@@ -77,8 +90,14 @@
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
-				<artifactId>junit-dep</artifactId>
+				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.hamcrest</groupId>
+						<artifactId>hamcrest-core</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
